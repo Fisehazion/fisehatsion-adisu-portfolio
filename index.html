@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fisehatsion Adisu - A versatile professional specializing in AI & Prompt Engineering, Python Development, and Content Creation. Building innovative solutions for real-world problems.">
+    <meta name="keywords" content="AI, Prompt Engineering, Python, Django, Content Creation, Web Development, Portfolio, Fisehatsion Adisu, AI Assistant">
+    <meta property="og:title" content="Fisehatsion Adisu - AI & Python Developer Portfolio">
+    <meta property="og:description" content="Explore my projects in AI-integrated websites, prompt engineering, and content creation. Let's build something amazing together.">
+    <meta property="og:image" content="https://yourwebsite.com/images/profile-share.jpg"> <meta property="og:url" content="https://yourwebsite.com"> <link rel="icon" href="https://www.chatbase.co/favicon.ico" type="image/x-icon">
+    <title>Fisehatsion Adisu - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-bg: #1a1a2e;
+            --secondary-bg: #16213e;
+            --accent-color: #e94560;
+            --secondary-accent: #0f3460;
+            --text-color: #ffffff;
+            --light-text: #a4a4a4;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-bg);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--secondary-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .logo:hover {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background: var(--secondary-bg);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+            background: var(--secondary-bg);
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        h2 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .skills-list li {
+            background: var(--secondary-accent);
+            color: var(--text-color);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-list li:hover {
+            transform: translateY(-5px);
+            background: var(--accent-color);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(233, 69, 96, 0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--primary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--text-color);
+            background-color: var(--secondary-accent);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .resume-download {
+            text-align: center;
+        }
+
+        .resume-download a {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .resume-download a:hover {
+            background-color: #d13a52;
+            transform: translateY(-3px);
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+        }
+        
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--text-color);
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .certificate-card {
+            background: var(--primary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certificate-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Increased gap */
+            margin-top: 30px;
+        }
+        
+        .social-icons a {
+            color: var(--light-text);
+            font-size: 2.5em; /* Increased font size */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--primary-bg);
+            color: var(--light-text);
+            border-top: 2px solid var(--secondary-bg);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 10px 10px 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+        }
+
+        /* Style for the new downloadable resume box */
+        .resume-download-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .downloadable-resume-image {
+            width: 250px;
+            height: auto;
+            border: 3px solid var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .downloadable-resume-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        
+        /* NEW: 3D Image Carousel Styles - Modified to match your theme */
+        .carousel-container {
+            width: 200px;
+            height: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            margin: 0 auto;
+            animation: gallery 20s linear infinite;
+            cursor: pointer;
+        }
+        .carousel-container:hover {
+            animation-play-state: paused;
+        }
+        .carousel-container span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+        }
+        /* This is the key change: targeting both img and video tags */
+        .carousel-container span img,
+        .carousel-container span video { 
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.4), 0 0 30px rgba(233, 69, 96, 0.2);
+            transition: transform 0.5s ease;
+        }
+        .carousel-container span img:hover,
+        .carousel-container span video:hover {
+            transform: scale(1.05);
+        }
+        @keyframes gallery {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+
+        /* NEW: Styles for Warm Welcome */
+        #welcome-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--accent-color);
+            opacity: 1;
+            transition: opacity 1s ease;
+            animation: fade-out 1s ease 2s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* NEW: Styles for Crazy Buttons */
+        .crazy-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-color);
+            background: linear-gradient(45deg, var(--accent-color), #0f3460, var(--accent-color));
+            background-size: 200% 200%;
+            animation: glowing-button 3s ease infinite;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .crazy-button:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.7);
+        }
+        @keyframes glowing-button {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* NEW: Styles for AI Bot Button */
+        #chatbot-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 1001;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 69, 96, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(233, 69, 96, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 69, 96, 0); }
+        }
+
+        /* NEW: Styles for Interactive About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .about-card {
+            background-color: var(--primary-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border: 1px solid var(--secondary-accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px var(--accent-color);
+        }
+        .about-card .icon {
+            font-size: 3em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        /* NEW: Styles for the Case Study Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: var(--secondary-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--secondary-accent);
+            width: 80%;
+            max-width: 700px;
+            border-radius: 12px;
+            position: relative;
+            animation: slide-up 0.5s ease;
+        }
+        .close-button {
+            color: var(--light-text);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-content h3 {
+            color: var(--accent-color);
+            font-size: 2em;
+            margin-top: 0;
+        }
+        .modal-content p {
+            color: var(--light-text);
+        }
+        
+        /* NEW: Styles for particles background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* NEW: Slide Up Animation for Modal */
+        @keyframes slide-up {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-message">
+        Welcome! Let's build something great.
+    </div>
+
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">Fisehatsion Adisu</a>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#visuals">Visuals</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="hero" class="hero">
+            <img src="Images/photo_2025-08-02_21-15-40.jpg" alt="Your Name" class="profile-pic" loading="lazy" decoding="async">
+            <h1>Hello, I'm Fisehatsion Adisu</h1>
+            <p>AI & Prompt Engineer | Content Creator & Scriptwriter | Python Developer (Django)</p>
+            <a href="#contact" class="crazy-button">Let's Connect!</a>
+        </section>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Prompt Engineering</h3>
+                    <p>I specialize in crafting intelligent solutions using AI, from advanced prompt engineering to building integrated websites that solve real-world problems.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Content & Storytelling</h3>
+                    <p>I transform complex ideas into engaging, impactful content and compelling scripts, bridging the gap between technology and human communication.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h3>Problem Solving</h3>
+                    <p>I am skilled at solving problems by combining my AI expertise and Python/Django programming. I build robust and efficient applications that turn challenges into elegant solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Script Writing and Content Development</li>
+                <li>Prompt Engineering</li>
+                <li>Python</li>
+                <li>Django</li>
+                <li>Training AI courses</li>
+                <li>Communication</li>
+                <li>Time Management</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="Images/photo_2025-07-25_18-08-51.jpg" alt="Job recommender project" loading="lazy" decoding="async">
+                    <div class="project-info">
+                        <h3>Job recommender</h3>
+                        <p>Oosuwaa is a job recommender system that analyzes resumes to provide personalized job recommendations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Fisehazion/job_recommender" target="_blank">GitHub Repo</a>
+                            <a href="#" class="case-study-button" data-project="oosuwaa">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Images/Screenshot 2025-08-02 202340.png" alt="Web-based AI ChatBot project" loading="lazy" decoding="async">
+                    <div class="project-info">
+                        <h3>Web-based AI ChatBot</h3>
+                        <p>Amado is a Python-based AI chatbot designed to respond to user inputs using NLP techniques.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Fisehazion/ai_chatbot" target="_blank">GitHub Repo</a>
+                            <a href="#" class="case-study-button" data-project="amado">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Images/Screenshot 2025-08-02 204057.png" alt="Productive Habesha project" loading="lazy" decoding="async">
+                    <div class="project-info">
+                        <h3>My work on Productive Habesha</h3>
+                        <p>This is my work I have done yet and shows my progress.</p>
+                        <div class="project-links">
+                            <a href="https://foamy-bosworth-65e.notion.site/ebd/1c38540c6fa280fb836eca6976a07792?v=1c38540c6fa280b1933d000c06385f27" target="_blank">View Project</a> 
+                            <a href="#" class="case-study-button" data-project="habesha">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="visuals">
+            <h2>Visual Showcase</h2>
+            <div class="carousel-container">
+                <span style="--i:1">
+                    <img src="Images/photo_2025-05-23_17-58-19.jpg" alt="Visual 1" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:2">
+                    <img src="Images/photo_2025-07-19_10-05-33.jpg" alt="Visual 2" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:3">
+                    <img src="Images/photo_2025-08-03_22-12-22.jpg" alt="Visual 3" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:4">
+                    <img src="Images/photo_2025-08-03_23-40-25.jpg" alt="Visual 4" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:5">
+                    <img src="Images/photo_2025-08-03_22-12-23.jpg" alt="Visual 5" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:6">
+                    <img src="Images/photo_2025-08-03_23-26-40.jpg" alt="Visual 6" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:7">
+                    <img src="Images/photo_2025-07-19_10-05-33.jpg" alt="Visual 7" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:8">
+                    <img src="Images/photo_2025-08-03_22-12-23.jpg" alt="Visual 8" loading="lazy" decoding="async">
+                </span>
+                <span style="--i:9">
+                    <video src="Images/video_2025-08-03_23-10-13.mp4" muted loop autoplay loading="lazy" decoding="async"></video>
+                </span>
+                <span style="--i:10">
+                    <video src="Images/your-other-video.mp4" muted loop autoplay loading="lazy" decoding="async"></video>
+                </span>
+                 <span style="--i:11">
+                    <img src="Images/photo_2025-08-03_23-04-32.jpg" alt="Visual 11" loading="lazy" decoding="async">
+                </span>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <h2>Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <img src="Images/photo_2025-07-18_14-55-03.jpg" alt="Certificate 1" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-card">
+                    <img src="Images/photo_2025-08-02_21-39-37.jpg" alt="Certificate 2" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-card">
+                    <img src="Images/Screenshot 2025-08-02 215502.png" alt="Certificate 3" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-card">
+                    <img src="Images/photo_2024-09-09_10-32-17.jpg" alt="Certificate 4" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-card">
+                    <img src="Images/photo_2025-08-02_22-09-36.jpg" alt="Certificate 5" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-card">
+                    <img src="Images/doc_2025-08-02_22-10-52.webp" alt="Certificate 6" loading="lazy" decoding="async">
+                </div>
+                 <div class="certificate-card">
+                    <img src="Images/photo_2025-08-03_23-45-22.jpg" alt="Certificate 7" loading="lazy" decoding="async">
+                </div>
+                 <div class="certificate-card">
+                    <img src="Images/photo_2025-08-03_23-48-01.jpg" alt="Certificate 8" loading="lazy" decoding="async">
+                </div>
+                 <div class="certificate-card">
+                    <img src="Images/photo_2025-08-03_23-49-50.jpg" alt="Certificate 9" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <p class="resume-download">
+                Click the image below to download my full resume in PDF format.
+            </p>
+            <div class="resume-download-box">
+                <a href="Images/fisehatsionadisuresume.pdf" download>
+                    <img src="Images/photo_2025-01-28_00-27-51.jpg" alt="Download Fisehatsion Adisu's Resume" class="downloadable-resume-image" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>I'm open to new opportunities. Feel free to reach out for a conversation, to collaborate on a project, or to order scriptwriting services.</p>
+                <p>Email: <a href="mailto:fisehatsionadisu@gmail.com">fisehatsionadisu@gmail.com</a></p>
+                <p>Telegram: <a href="https://t.me/fisiha1224" target="_blank">@fisiha1224</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/fisehatsion-adisu-abute-929279208" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/dfisaadisu?igsh=YzljYTk1ODg3Zg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/dfisa.adisu" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://t.me/fisiha1224" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </section>
+
+        <section id="telegram-channel">
+            <h2>Join Our Telegram Community Connect to Collab.</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+                Connect with me and other like-minded individuals to discuss Python, AI, prompt engineering,tech, script writing, content development and more.
+                Join our channel to get updates on my latest work and engage in valuable conversations.
+            </p>
+            <div style="text-align: center;">
+                <a href="https://t.me/connectcollab001" target="_blank" class="crazy-button">Join Our Channel</a>
+            </div>
+        </section>
+        
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Fisehatsion Adisu. All Rights Reserved.</p>
+    </footer>
+
+    <div id="chatbot-trigger" onclick="window.chatbase('show')">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <div id="caseStudyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+        <p><a id="modal-link" href="#" target="_blank" class="crazy-button" style="margin-top: 0; padding: 10px 20px; font-size: 0.9em;">View Project</a></p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": { "value": "#e94560" },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0f3460",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Warm Welcome Animation
+            const welcomeMessage = document.getElementById('welcome-message');
+            setTimeout(() => {
+                welcomeMessage.style.opacity = '0';
+                setTimeout(() => {
+                    welcomeMessage.style.display = 'none';
+                }, 1000);
+            }, 2000);
+
+            // 2. Proactively trigger the AI chatbot
+            setTimeout(() => {
+                if (window.chatbase && typeof window.chatbase === 'function') {
+                    window.chatbase('show');
+                }
+            }, 5000);
+
+            // 3. Case Study Modal Logic
+            const modal = document.getElementById("caseStudyModal");
+            const closeModal = document.getElementsByClassName("close-button")[0];
+            const modalTitle = document.getElementById("modal-title");
+            const modalText = document.getElementById("modal-text");
+            const modalLink = document.getElementById("modal-link");
+
+            const projectCaseStudies = {
+                oosuwaa: {
+                    title: "Oosuwaa Job Recommender: A Case Study",
+                    text: `<strong>Problem:</strong><br>Job seekers often struggle to find relevant opportunities, while employers find it difficult to sift through countless resumes.<br><strong>Solution:</strong><br>I built Oosuwaa, a Python and Django-based job recommender that uses resume analysis to match candidates with jobs that fit their skills and experience. The name "Oosuwaa" means "work" in the Wolaytatto language, reflecting its purpose.<br><strong>Technologies:</strong><br>Python, Django, PostgreSQL, and various libraries for resume parsing and NLP.`,
+                    link: "https://github.com/Fisehazion/job_recommender"
+                },
+                amado: {
+                    title: "Amado AI Chatbot: A Case Study",
+                    text: `<strong>Problem:</strong><br>Many websites lack engaging, interactive user support. Chatbots can be a powerful tool for this but are often generic.<br><strong>Solution:</strong><br>Amado is a custom-built, Python-based AI chatbot using NLP to provide intelligent, human-like responses. It serves as a great example of how I can build conversational AI applications.<br><strong>Technologies:</strong><br>Python, Django (for the web interface), and NLP libraries like NLTK or SpaCy.`,
+                    link: "https://github.com/Fisehazion/ai_chatbot"
+                },
+                habesha: {
+                    title: "Productive Habesha: A Case Study",
+                    text: `<strong>Problem:</strong><br>The need for organized documentation and a clear, collaborative workspace for a team or project to produce impactfull contents.<br><strong>Solution:</strong><br>I contributed to the development of a Notion-based workspace for the "Productive Habesha" team. My work involved structuring content, creating workflows, and ensuring project progress was transparent and easily accessible to all collaborators.<br><strong>Technologies:</strong><br>Notion, project management principles, content creation, and organization strategies.`,
+                    link: "https://foamy-bosworth-65e.notion.site/ebd/1c38540c6fa280fb836eca6976a07792?v=1c38540c6fa280b1933d000c06385f27"
+                }
+            };
+
+            document.querySelectorAll('.case-study-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectKey = e.target.getAttribute('data-project');
+                    const caseStudy = projectCaseStudies[projectKey];
+                    if (caseStudy) {
+                        modalTitle.textContent = caseStudy.title;
+                        // Use innerHTML to render the bold and line break tags
+                        modalText.innerHTML = caseStudy.text;
+                        modalLink.href = caseStudy.link;
+                        modal.style.display = "block";
+                    }
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="7l-l-IPYM6vuYKNAzLvvL";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+</body>
+</html>
